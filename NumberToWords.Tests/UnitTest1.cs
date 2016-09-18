@@ -229,11 +229,22 @@ namespace NumberToWords.Tests
         }
 
         [TestMethod]
+        public void NegativeNumbers()
+        {
+            var value = -125;
+            var expected = "negative one hundred and twenty-five";
+
+            var result = NumberToWords.Helpers.NumberHelper.ConvertNumberToWords(value);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
         public void Currency()
         {
             var expected = "one dollar and fifty cents";
 
-            var result = NumberToWords.Helpers.NumberHelper.ConvertNumberToCurrency(1.50,"dollar","cent");
+            var result = NumberToWords.Helpers.NumberHelper.ConvertNumberToCurrency(1.50, "dollar", "cent");
 
             Assert.AreEqual(expected, result);
         }

@@ -16,6 +16,7 @@ namespace NumberToWords
 
         protected void btnConvert_Click(object sender, EventArgs e)
         {
+            lblResult.Text = "";
             lblResult.Text = Helpers.NumberHelper.ConvertNumberToCurrency(double.Parse(txtNumber.Text),"dollar","cent");
         }
     }

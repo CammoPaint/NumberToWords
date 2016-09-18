@@ -31,13 +31,13 @@ namespace NumberToWords {
         protected global::System.Web.UI.WebControls.TextBox txtNumber;
         
         /// <summary>
-        /// valNumberValue control.
+        /// valNumberRange control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator valNumberValue;
+        protected global::System.Web.UI.WebControls.RangeValidator valNumberRange;
         
         /// <summary>
         /// btnConvert control.

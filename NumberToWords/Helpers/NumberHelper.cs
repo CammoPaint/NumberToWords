@@ -18,7 +18,7 @@ namespace NumberToWords.Helpers
         public static string ConvertNumberToCurrency(double Number, string WholeUnit, string FractionUnit)
         {
             var result = "";
-
+            
             // split the dollars and cents
             var dollarValue = Math.Truncate(Number);
             var centValue = (Number - Math.Truncate(Number)) * 100;
@@ -50,10 +50,14 @@ namespace NumberToWords.Helpers
 
             var ones = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
             var tens = new[] { "zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
-            var units = new[] { "hundred", "thousand", "million", "billion", "trillion" };
+            var units = new[] { "hundred", "thousand", "million", "billion" };
+
+            // negative numbers
+            if (Number < 0)
+                word.Append("negative " + ConvertNumberToWords(Math.Abs(Number)));
 
             // zero - nineteen
-            if (Number < 20)
+            else if (Number < 20)
                 word.Append(ones[Number]);
 
             // one hundred and over

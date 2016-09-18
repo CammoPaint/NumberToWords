@@ -37,13 +37,13 @@
 
         <div class="container">
             <h1>Convert Number to Words</h1>
-            <p class="lead">Use this page to convert decimal numbers values into words.</p>
+            <p class="lead">Use this page to convert decimal numbers into words.</p>
             <div class="well">
                 <div class="form">
                     <div class="form-group">
                         <label>Number to convert (e.g. 127.34)</label>
                         <asp:TextBox ID="txtNumber" placeholder="Number" class="form-control" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="valNumberValue" runat="server" ControlToValidate="txtNumber" ValidationExpression="\d{1,10}.\d{2}" ErrorMessage="Please enter a valid number."></asp:RegularExpressionValidator>
+                        <asp:RangeValidator ID="valNumberRange" ControlToValidate="txtNumber" runat="server" MinimumValue="0" MaximumValue="2147483647" Type="Double" ErrorMessage="Please enter a valid number range"></asp:RangeValidator>
                     </div>
                     <asp:Button ID="btnConvert" runat="server" CssClass="btn btn-primary" Text="Convert" OnClick="btnConvert_Click" />
                 </div>
